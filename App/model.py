@@ -217,6 +217,7 @@ def searchPaths(analyzer, initialStation, method):
     """
     # TODO Lab 11, ejectutar DepthFirstSearch de dfs
     if method == "dfs":
+        
         pass
     # TODO Lab 11, ejectutar BreadhtFisrtSearch de bfs
     elif method == "bfs":

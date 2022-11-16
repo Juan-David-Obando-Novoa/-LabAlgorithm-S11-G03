@@ -94,6 +94,11 @@ def optionFour(cont, initialStation):
 
 
 def optionFive(cont, initialStation, searchMethod):
+    print("estacion base")
+    print("Calculando caminos de busqueda con " + searchMethod)
+    path= controller.searchPaths(cont,initialStation, searchMethod)
+    print(path)
+    print("Fin")
     # TODO Lab 11, conectar con la funcion del controller searchPaths
     pass
 
@@ -125,6 +130,7 @@ def optionEight(cont):
 
 def optionNine(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller hasSearchPath
+    haspath= controller.hasSearchPath(cont, destStation, searchMethod )
     haspath = None
     print(haspath)
 
@@ -132,8 +138,9 @@ def optionNine(cont, destStation, searchMethod):
 def optionTen(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller searchPath
     path = None
+    path= controller.searchPaths(cont, destStation, searchMethod)
     if path is not None:
-        pass
+        print(path)
     else:
         print('No hay camino')
 
@@ -166,7 +173,11 @@ def thread_cycle():
 
         elif int(inputs) == 5:
             # TODO Lab 11, completar inputs opt 5, searchMethod, initialStation
-            pass
+            searchMethod= input("Seleccione dfs o bfs como algoritmo: " )
+            msg="Estacion Base. busStopCode-ServiceNo (Ej: 75009-10): "
+            initialStation= input(msg)
+            optionFive(cont, initialStation, searchMethod)
+            
 
         elif int(inputs) == 6:
             destStation = input("Estación destino (Ej: 15151-10): ")
@@ -180,10 +191,14 @@ def thread_cycle():
             optionEight(cont)
 
         elif int(inputs) == 9:
+            destStation= input(" Estación destino (EJ: 15151-10): ")
+            optionNine(cont, destStation, searchMethod)
             # TODO Lab 11, completar inputs opt 9, destStation
             pass
 
         elif int(inputs) == 10:
+            destStation= input("Estación destino(Ej:15151-10): ")
+            optionTen(cont,destStation, searchMethod)
             # TODO Lab 11, completar inputs opt 10, destStation
             pass
 
