@@ -96,7 +96,7 @@ def optionFour(cont, initialStation):
 def optionFive(cont, initialStation, searchMethod):
     print("estacion base")
     print("Calculando caminos de busqueda con " + searchMethod)
-    path= controller.searchPaths(cont,initialStation, searchMethod)
+    path = controller.searchPaths(cont,initialStation, searchMethod)
     print(path)
     print("Fin")
     # TODO Lab 11, conectar con la funcion del controller searchPaths
